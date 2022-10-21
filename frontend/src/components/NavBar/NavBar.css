@@ -1,0 +1,113 @@
+nav {
+  padding: 1.1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+}
+nav a {
+  padding: 2rem;
+}
+.lightNav {
+  border-bottom: 3px solid #2B3135;
+}
+.darkNav {
+  border-bottom: 3px solid #F0F2F2;
+}
+.lightNav a {
+  color: black;
+}
+.darkNav a {
+  color: #F0F2F2;
+}
+.leftSideNav {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  padding: 0.5rem;
+}
+.logo img {
+  width: 150px;
+}
+.crown {
+  margin-left: 2px;
+  color: #FFFD24;
+  font-size: 15px;
+}
+.triangleDown {
+  cursor: pointer;
+}
+.dropDownMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.dropDownMenu div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 5.7rem;
+  left: 75%;
+}
+.dropDownMenu a {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.lightDrop {
+  background-color: #F0F2F2;
+  border: 1.5px solid #2B3135;
+}
+.darkDrop {
+  background-color: #2B3135;
+  border: 1.5px solid #F0F2F2;
+}
+.smallNav {
+  display: none;
+}
+.navHamburger {
+  font-size: 40px;
+  cursor: pointer;
+}
+.smallNavToggle {
+  padding: 5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.smallNavToggle a {
+  width: 220px;
+  margin: 0 auto;
+  color: #F0F2F2;
+}
+.smallNavToggle a:hover {
+  color: #FFFD24;
+}
+
+@media screen and (max-width: 750px){
+  nav {
+    justify-content: space-between;
+  }
+  .logo {
+    margin-left: 2rem;
+  }
+  .mainLinks {
+    display: none;
+  }
+  .userLinks {
+    display: none;
+  }
+  .smallNav {
+    display: flex;
+    margin-right: 2rem;
+  }
+}
