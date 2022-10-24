@@ -1,0 +1,28 @@
+footer {
+  padding: 0.5rem;
+  font-size: 25px;
+}
+footer p {
+  text-align: center;
+  font-size: 16px;
+}
+.lightFooter {
+  border-top: 3px solid #2B3135;
+}
+.darkFooter {
+  border-top: 3px solid #F0F2F2;
+}
+.lightFooter a {
+  color: black;
+}
+.darkFooter a {
+  color: #F0F2F2;
+}
+.footerRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footerLogo img {
+  width: 120px;
+}
