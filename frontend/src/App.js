@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "components/NavBar/NavBar";
 import Main from "components/Main/Main";
+import Footer from "components/Footer/Footer";
 import "App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
         </Routes>
+        <Footer lightTheme={lightTheme} />
       </Router>
     </div>
   );
