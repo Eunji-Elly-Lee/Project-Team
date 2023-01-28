@@ -93,9 +93,18 @@ nav a {
   color: #FFFD24;
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 920px) {
+  nav a {
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
   nav {
     justify-content: space-between;
+  }
+  nav a {
+    padding: 2rem;
   }
   .logo {
     margin-left: 2rem;
