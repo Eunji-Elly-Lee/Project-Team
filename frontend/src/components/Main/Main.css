@@ -1,3 +1,55 @@
-.Container {
-  /* width: 100%; */
+.mainContainer {
+  margin: 13.5vw 0 16vw 30px;
+  display: flex;
+  justify-content: center;
+}
+.balloonContainer {
+  width: 15%;
+  margin: 0 3%;
+  text-align: center;
+}
+.leftBalloon {
+  padding-top: 100px;
+}
+.balloon {
+  width: 100%;
+  max-width: 250px;
+  cursor: pointer;
+}
+.mainMessage {
+  padding-top: 25px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #FFFD24;
+  text-transform: uppercase;
+}
+.mainMessage span {
+  color: #F0F2F2;
+}
+
+@media screen and (max-width: 1020px) {
+  .mainContainer {
+    margin: 18vh 0 24vh 30px;
+  }
+  .balloonContainer {
+    width: 18%;
+  }
+  .mainMessage {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 905px) {
+  .mainContainer {
+    margin-left: 0;
+  }
+  .balloonContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .mainMessage {
+    font-size: 40px;
+  }
 }
