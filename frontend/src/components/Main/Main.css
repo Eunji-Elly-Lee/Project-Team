@@ -53,3 +53,9 @@
     font-size: 40px;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .mainMessage {
+    font-size: 35px;
+  }
+}
