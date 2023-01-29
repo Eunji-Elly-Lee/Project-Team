@@ -100,14 +100,11 @@ nav a {
 }
 
 @media screen and (max-width: 750px) {
-  nav {
-    justify-content: space-between;
-  }
   nav a {
     padding: 2rem;
   }
   .logo {
-    margin-left: 2rem;
+    margin-right: 8rem;
   }
   .mainLinks {
     display: none;
@@ -117,6 +114,14 @@ nav a {
   }
   .smallNav {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .logo {
     margin-right: 2rem;
+  }
+  .smallNavToggle {
+    padding: 5rem 2rem;
   }
 }
