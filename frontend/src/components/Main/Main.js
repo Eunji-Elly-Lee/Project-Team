@@ -6,12 +6,12 @@ import Working from "components/Working/Working";
 import "components/Main/Main.css";
 
 function Main() {
-  const PBSRC01 = "./assets/project_balloon01.png";
-  const PBSRC02 = "./assets/project_balloon02.png";
-  const ABSRC01 = "./assets/about_balloon01.png";
-  const ABSRC02 = "./assets/about_balloon02.png";
-  const [leftBalloonSrc, setLeftBalloonSrc] = useState(PBSRC01);
-  const [rightBalloonSrc, setRightBalloonSrc] = useState(ABSRC01);
+  const P_B_SRC01 = "./assets/project_balloon01.png";
+  const P_B_SRC02 = "./assets/project_balloon02.png";
+  const A_B_SRC01 = "./assets/about_balloon01.png";
+  const A_B_SRC02 = "./assets/about_balloon02.png";
+  const [leftBalloonSrc, setLeftBalloonSrc] = useState(P_B_SRC01);
+  const [rightBalloonSrc, setRightBalloonSrc] = useState(A_B_SRC01);
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ function Main() {
   return (
     <>
     {user ? (
+      // When user logins, show working component
       <Working />
     ) : (
       <div className="mainContainer">
@@ -30,8 +31,8 @@ function Main() {
           <img
             className="balloon"
             src={leftBalloonSrc}
-            onMouseOver={() => setLeftBalloonSrc(PBSRC02)}
-            onMouseOut={() => setLeftBalloonSrc(PBSRC01)}
+            onMouseOver={() => setLeftBalloonSrc(P_B_SRC02)}
+            onMouseOut={() => setLeftBalloonSrc(P_B_SRC01)}
             onClick={() => navigate("/projects")}
             alt="Kill the code balloon"
           />
@@ -46,8 +47,8 @@ function Main() {
           <img
             className="balloon"
             src={rightBalloonSrc}
-            onMouseOver={() => setRightBalloonSrc(ABSRC02)}
-            onMouseOut={() => setRightBalloonSrc(ABSRC01)}
+            onMouseOver={() => setRightBalloonSrc(A_B_SRC02)}
+            onMouseOut={() => setRightBalloonSrc(A_B_SRC01)}
             onClick={() => navigate("/about")}
             alt="About balloon"
           />
