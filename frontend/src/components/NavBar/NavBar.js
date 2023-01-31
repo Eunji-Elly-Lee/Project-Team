@@ -31,7 +31,7 @@ function NavBar({ lightTheme, userLogin, isUserAdmin }) {
           )}
         </div>
       </div>
-      <div className="userLinks">
+      <div className="rightSideNav">
         {userLogin ? (
           // When user logins, show user name and dropdown menu icon
           <div>
