@@ -5,11 +5,9 @@ import { FaCrown } from "react-icons/fa";
 import { VscTriangleDown } from "react-icons/vsc";
 import "components/NavBar/NavBar.css";
 
-function NavBar({
-  lightTheme,
-  userLogin,
-  isUserAdmin,
-}) {
+function NavBar({ lightTheme, userLogin, isUserAdmin }) {
+  const L_B_SRC = "./assets/logo_black.gif";
+  const L_W_SRC = "./assets/logo_white.gif";
   const [toggleMenu, setToggleMenu] = useState(false);
   const [dropDownMenu, setdropDownMenu] = useState(false);
 
@@ -19,7 +17,7 @@ function NavBar({
         <div className="logo">
           <Link to="/">
             <img
-              src={lightTheme ? "./assets/logo_black.gif" : "./assets/logo_white.gif"}
+              src={lightTheme ? L_B_SRC : L_W_SRC}
               alt="logo"
             />
           </Link>
@@ -27,6 +25,7 @@ function NavBar({
         <div className="mainLinks">
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
+          {/* When user logins, show notice menu */}
           {userLogin && (
             <Link to="/notice">Notice</Link>
           )}
@@ -34,6 +33,7 @@ function NavBar({
       </div>
       <div className="userLinks">
         {userLogin ? (
+          // When user logins, show user name and dropdown menu icon
           <div>
             Hello,&nbsp;
             {isUserAdmin && (
@@ -44,6 +44,7 @@ function NavBar({
               className="triangleDown"
               onClick={() => setdropDownMenu((prev) => !prev)}
             />
+            {/* When opening dropdown menu */}
             {dropDownMenu && (
               <div
                 className="dropDownMenu"
@@ -64,11 +65,13 @@ function NavBar({
           </>
         )}
       </div>
+      {/* For small device - using hamburger icon */}
       <div className="smallNav">
         <GiHamburgerMenu
           className="navHamburger"
           onClick={() => setToggleMenu((prev) => !prev)}
         />
+        {/* When clicking hamburger menu icon */}
         {toggleMenu && (
           <div
             className="smallNavToggle"
@@ -77,6 +80,7 @@ function NavBar({
             <Link to="/about">About</Link>
             <Link to="/projects">Projects</Link>
             {userLogin ? (
+              // When user logins, show menus for user
               <>
               <Link to="/notice">Notice</Link>
               <Link to="/myaccount">My Account</Link>
