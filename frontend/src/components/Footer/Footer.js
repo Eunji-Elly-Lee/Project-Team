@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import "components/Footer/Footer.css";
 
-function Footer({
-  lightTheme,
-}) {
+function Footer({ lightTheme }) {
+  const L_B_SRC = "./assets/logo_black.gif";
+  const L_W_SRC = "./assets/logo_white.gif";
+
   return (
     <footer className={lightTheme ? "lightFooter" : "darkFooter"}>
       <div className="footerRow">
         <div className="footerLogo">
           <Link to="/">
             <img
-              src={lightTheme ? "./assets/logo_black.gif" : "./assets/logo_white.gif"}
+              src={lightTheme ? L_B_SRC : L_W_SRC}
               alt="logo"
             />
           </Link>
