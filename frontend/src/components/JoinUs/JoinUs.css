@@ -1,0 +1,40 @@
+.joinContainer {
+  margin: 15vw 25vw 19vw 28vw;
+  font-size: 20px;
+}
+.joinMessage {
+  margin-bottom: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.signInLink {
+  margin-bottom: 25px;
+}
+.signInLink a {
+  margin-left: 12px;
+  color: #FFFD24;
+}
+.joinInput {
+  padding: 5px 0;
+}
+.joinLabel {
+  line-height: 1;
+}
+.joinBtn {
+  float: right;
+  width: 95px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  .joinContainer {
+    margin: 22vh 15% 30vh;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .joinContainer {
+    margin: 15vh 10% 30vh;
+  }
+}
