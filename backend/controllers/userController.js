@@ -56,3 +56,21 @@ exports.login = async (req, res) => {
     return console.log(error);
   }
 };
+
+// GET specific user by email
+exports.getUser = async (req, res) => {
+  const email = req.query.email;
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email: email });
+
+    if (user) {
+      return res.status(200).json(user);
+    } else {
+      return res.status(204).json("User Not Found!");
+    }
+  } catch (error) {
+    return console.log(error);
+  }
+};
