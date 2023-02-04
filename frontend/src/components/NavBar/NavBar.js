@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "../../redux/userSlice";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaCrown } from "react-icons/fa";
 import { VscTriangleDown } from "react-icons/vsc";
 import "components/NavBar/NavBar.css";
 
-function NavBar({ lightTheme, userLogin, isUserAdmin }) {
+function NavBar({ lightTheme }) {
   const L_B_SRC = "./assets/logo_black.gif";
   const L_W_SRC = "./assets/logo_white.gif";
   const [toggleMenu, setToggleMenu] = useState(false);
   const [dropDownMenu, setdropDownMenu] = useState(false);
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   return (
     <nav className={lightTheme ? "lightNav" : "darkNav"}>
@@ -26,20 +30,20 @@ function NavBar({ lightTheme, userLogin, isUserAdmin }) {
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
           {/* When user logins, show notice menu */}
-          {userLogin && (
+          {user && (
             <Link to="/notice">Notice</Link>
           )}
         </div>
       </div>
       <div className="rightSideNav">
-        {userLogin ? (
+        {user ? (
           // When user logins, show user name and dropdown menu icon
           <div>
             Hello,&nbsp;
-            {isUserAdmin && (
+            {user.role && (
               <FaCrown className="crown" />
             )}
-            &nbsp;Elly&nbsp;
+            &nbsp;{user.username}&nbsp;
             <VscTriangleDown
               className="triangleDown"
               onClick={() => setdropDownMenu((prev) => !prev)}
@@ -53,7 +57,9 @@ function NavBar({ lightTheme, userLogin, isUserAdmin }) {
                 <div className={lightTheme ? "lightDrop" : "darkDrop"}>
                   <Link to="/myaccount">My Account</Link>
                   <Link to="/admin">Admin</Link>
-                  <Link to="/logout">Logout</Link>
+                  <Link onClick={() => dispatch(userActions.logout())}>
+                    Logout
+                  </Link>
                 </div>
               </div>
             )}
@@ -79,15 +85,17 @@ function NavBar({ lightTheme, userLogin, isUserAdmin }) {
           >
             <Link to="/about">About</Link>
             <Link to="/projects">Projects</Link>
-            {userLogin ? (
+            {user ? (
               // When user logins, show menus for user
               <>
               <Link to="/notice">Notice</Link>
               <Link to="/myaccount">My Account</Link>
-              {isUserAdmin && (
+              {user.role && (
                 <Link to="/admin">Admin</Link>
               )}
-              <Link to="/logout">Logout</Link>
+              <Link onClick={() => dispatch(userActions.logout())}>
+                Logout
+              </Link>
               </>
             ) : (
               <>
