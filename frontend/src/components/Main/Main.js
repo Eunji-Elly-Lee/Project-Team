@@ -38,8 +38,8 @@ function Main() {
           />
         </div>
         <div className="mainMessage">
-            We are here to <br />
-            <span>create project</span> <br />
+            We are here<br />
+            <span>to create projects</span> <br />
             and keep developing <br />
             something creative.
         </div>
