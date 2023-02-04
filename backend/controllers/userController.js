@@ -3,30 +3,23 @@ const bcrypt = require("bcryptjs");
 
 // POST register user
 exports.addUser = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password } = req.body.user;
 
   try {
-    // Check if the user exists
-    const existUser = await User.findOne({ email: email });
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
-    if (existUser) {
-      return res.status(400).json({ message: "The email is already registered!" });
-    } else {
-      // Hash password
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);
+    // Create and save new user to DB
+    const user = new User({
+      username,
+      email,
+      password: hashedPassword
+    });
 
-      // Create and save new user to DB
-      const user = new User({
-        username,
-        email,
-        password: hashedPassword
-      });
+    await user.save();
 
-      await user.save();
-
-      return res.status(201).json(user);
-    }
+    return res.status(201).json(user);
   } catch (error) {
     return console.log(error);
   }
@@ -34,7 +27,7 @@ exports.addUser = async (req, res) => {
 
 // POST login
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.body.user;
 
   try {
     // Find user
@@ -47,10 +40,10 @@ exports.login = async (req, res) => {
       if (validPassword) {
         return res.status(200).json(user);
       } else {
-        return res.status(400).json("Invalid password!")
+        return res.status(203).json("Invalid password!")
       }
     } else {
-      return res.status(404).json({ message: "Invalid email!" });
+      return res.status(203).json("Invalid email!");
     }
   } catch (error) {
     return console.log(error);
