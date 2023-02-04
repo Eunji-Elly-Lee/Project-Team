@@ -31,7 +31,7 @@ exports.sendCodeEmail = async (req, res) => {
   const code = Math.floor(Math.random() * 100000);
 
   const mailOptions = {
-    from: process.env.EMAIL,
+    from: `"Kill The Code" <${process.env.EMAIL}>`,
     to: email,
     subject: "Kill The Code Verification Code",
     template: "verificationCode",
