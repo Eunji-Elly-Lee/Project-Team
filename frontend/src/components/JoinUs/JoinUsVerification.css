@@ -1,0 +1,45 @@
+.joinCodeContainer {
+  margin: 15vw 30vw 21vw 33vw;
+  font-size: 20px;
+}
+.joinCodeMessage {
+  margin-bottom: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.joinCodeMessage span {
+  color: #FFFD24;
+}
+.codeErrorMessage {
+  margin-bottom: 10px;
+}
+.joinCodeInput {
+  padding: 25px 0 5px;
+}
+.joinCodeLabel {
+  line-height: 1;
+}
+.joinCodeBtn {
+  float: right;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.resendingLink {
+  margin-top: 60px;
+  color: #FFFD24;
+}
+.resendingLink span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1125px) {
+  .joinCodeContainer {
+    margin: 22vh 20% 32vh;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .joinCodeContainer {
+    margin: 20vh 10% 30vh;
+  }
+}
