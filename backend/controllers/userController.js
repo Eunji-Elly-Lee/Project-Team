@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
       if (validPassword) {
         return res.status(200).json(user);
       } else {
-        return res.status(203).json("Invalid password!")
+        return res.status(203).json("Invalid password!");
       }
     } else {
       return res.status(203).json("Invalid email!");

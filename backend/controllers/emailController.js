@@ -16,7 +16,7 @@ const handlebarOptions = {
   viewEngine: {
     extName: ".handlebars",
     partialsDir: path.join(__dirname, "../../frontend/src/emailTemplates/"),
-    defaultLayout: false,
+    defaultLayout: false
   },
   viewPath: path.join(__dirname, "../../frontend/src/emailTemplates/"),
   extName: ".handlebars"
