@@ -40,10 +40,10 @@ exports.login = async (req, res) => {
       if (validPassword) {
         return res.status(200).json(user);
       } else {
-        return res.status(203).json("Invalid password!");
+        return res.status(203).json("Invalid password");
       }
     } else {
-      return res.status(203).json("Invalid email!");
+      return res.status(203).json("Invalid email");
     }
   } catch (error) {
     return console.log(error);
@@ -61,7 +61,7 @@ exports.getUser = async (req, res) => {
     if (user) {
       return res.status(200).json(user);
     } else {
-      return res.status(204).json("User Not Found!");
+      return res.status(204).json("User not found");
     }
   } catch (error) {
     return console.log(error);
