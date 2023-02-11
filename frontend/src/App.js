@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "components/NavBar/NavBar";
 import Main from "components/Main/Main";
 import Projects from "components/Projects/Projects";
+import SignIn from "components/SignIn/SignIn";
 import JoinUs from "components/JoinUs/JoinUs";
 import JoinUsVerification from "components/JoinUs/JoinUsVerification";
 import Footer from "components/Footer/Footer";
@@ -21,6 +22,11 @@ function App() {
             basename={process.env.PUBLIC_URL}
             path="/projects"
             element={<Projects />}
+          />
+          <Route
+            basename={process.env.PUBLIC_URL}
+            path="/signin"
+            element={<SignIn />}
           />
           <Route
             basename={process.env.PUBLIC_URL}
