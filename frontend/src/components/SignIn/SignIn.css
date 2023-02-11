@@ -1,0 +1,46 @@
+.signContainer {
+  margin: 15vw 25vw 19vw 28vw;
+  font-size: 20px;
+}
+.signMessage {
+  margin-bottom: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.joinUsLink {
+  margin-bottom: 25px;
+}
+.joinUsLink a {
+  margin-left: 12px;
+  color: #FFFD24;
+}
+.signInput {
+  padding: 5px 0;
+}
+.signLabel {
+  line-height: 1;
+}
+.signBtn {
+  float: right;
+  width: 95px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.forgotLink,
+.forgotLink:hover {
+  display: inline-block;
+  margin-top: 60px;
+  color: #FFFD24;
+}
+
+@media screen and (max-width: 1100px) {
+  .signContainer {
+    margin: 22vh 15% 30vh;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .signContainer {
+    margin: 15vh 10% 30vh;
+  }
+}
