@@ -145,7 +145,7 @@ function JoinUs() {
           variant="outline-info"
           type="submit"
         >
-          Join
+          Join in
         </Button>
       </Form>
     </div>
