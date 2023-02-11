@@ -73,7 +73,7 @@ function JoinUsVerification() {
       setUser(location.state.user);
       setCode(location.state.code);
       setRedirecting(true);
-      // Redirect to current path without state
+      // Redirect to current path without location state
       navigate(".", {
         replace: true
       });
