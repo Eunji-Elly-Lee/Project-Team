@@ -56,7 +56,9 @@ function NavBar({ lightTheme }) {
               >
                 <div className={lightTheme ? "lightDrop" : "darkDrop"}>
                   <Link to="/myaccount">My Account</Link>
-                  <Link to="/admin">Admin</Link>
+                  {user.role && (
+                    <Link to="/admin">Admin</Link>
+                  )}
                   <Link onClick={() => dispatch(userActions.logout())}>
                     Logout
                   </Link>
