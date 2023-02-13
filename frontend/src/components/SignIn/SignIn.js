@@ -35,7 +35,7 @@ function SignIn() {
         return response.data;
       });
 
-      if (typeof loginUser === 'object') {
+      if (typeof loginUser === "object") {
         // Login successfully
         dispatch(userActions.login(loginUser));        
         navigate("/");
