@@ -5,6 +5,7 @@ import Main from "components/Main/Main";
 import Projects from "components/Projects/Projects";
 import SignIn from "components/SignIn/SignIn";
 import Forgot from "components/Forgot/Forgot";
+import Reset from "components/Reset/Reset";
 import JoinUs from "components/JoinUs/JoinUs";
 import JoinUsVerification from "components/JoinUs/JoinUsVerification";
 import Footer from "components/Footer/Footer";
@@ -33,6 +34,11 @@ function App() {
             basename={process.env.PUBLIC_URL}
             path="/forgot"
             element={<Forgot />}
+          />
+          <Route
+            basename={process.env.PUBLIC_URL}
+            path="/reset"
+            element={<Reset />}
           />
           <Route
             basename={process.env.PUBLIC_URL}
