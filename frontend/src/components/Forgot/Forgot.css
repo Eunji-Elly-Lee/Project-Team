@@ -1,0 +1,39 @@
+.forgotContainer {
+  margin: 16vw 30vw 22vw 33vw;
+  font-size: 20px;
+}
+.forgotMessage {
+  margin-bottom: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.forgotInput {
+  padding: 25px 0 5px;
+}
+.forgotLabel {
+  line-height: 1;
+}
+.forgotBtn {
+  float: right;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.resendingClick {
+  margin-top: 60px;
+  color: #FFFD24;
+}
+.resendingClick span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1125px) {
+  .forgotContainer {
+    margin: 22vh 20% 32vh;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .forgotContainer {
+    margin: 20vh 10% 30vh;
+  }
+}
