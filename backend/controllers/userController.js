@@ -67,3 +67,32 @@ exports.getUser = async (req, res) => {
     return console.log(error);
   }
 };
+
+// PUT update user by id
+exports.updateUser = async (req, res) => {
+  const { _id, username, email, password, role } = req.body.user;
+
+  try {
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Find and update the user's info
+    const user = await User.findByIdAndUpdate(
+      _id,
+      {
+        username: username,
+        email: email,
+        password: hashedPassword,
+        role: role
+      },
+      {
+        // Option: return new data updated
+        new: true
+      }
+    );
+
+    return res.status(202).json(user);
+  } catch (error) {
+    return console.log(error);
+  }
+};
