@@ -88,8 +88,8 @@ function JoinUsVerification() {
   return (
     <div className="joinCodeContainer">
       <div className="joinCodeMessage">
-        <div className="codeErrorMessage">{message}</div>
-        Welcome <span>{user.username}</span>!        
+        Welcome <span>{user.username}</span>!   
+        <div className="codeErrorMessage">{message}</div>     
       </div>
       <div>
         The verification code has been sent to your email. <br />
