@@ -1,0 +1,57 @@
+.resetContainer {
+  margin: 15vw 25vw 19vw 28vw;
+  font-size: 20px;
+}
+.resetMessage {
+  margin-bottom: 20px;
+  font-size: 23px;
+  text-align: center;
+}
+.resetMessage span {
+  color: #FFFD24;
+}
+.resetErrorMessage {
+  margin-top: 10px;
+}
+.resetForm {
+  margin-top: 20px;
+}
+.resetInput {
+  padding: 5px 0;
+}
+.resetLabel {
+  line-height: 1;
+}
+.resetBtn {
+  float: right;
+  width: 95px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.resetCheck {
+  text-align: center;
+  color: gray;
+  font-size: 80px;
+  opacity: 0.3;
+  margin-top: -20px;
+}
+.goToSignin {
+  margin-top: 22px;
+  text-align: center;
+}
+.goToSignin a {
+  margin-left: 8px;
+  color: #FFFD24;
+}
+
+@media screen and (max-width: 1100px) {
+  .resetContainer {
+    margin: 22vh 15% 30vh;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .resetContainer {
+    margin: 15vh 10% 30vh;
+  }
+}
