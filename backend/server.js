@@ -8,6 +8,7 @@ dotenv.config();
 // Import routes
 const userRoute = require("./routes/userRoute");
 const emailRoute = require("./routes/emailRoute");
+const projectRoute = require("./routes/projectRoute");
 
 // Database connection
 const connection = require("./database/db");
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use("/api/users", userRoute);
 app.use("/api/emails", emailRoute);
+app.use("/api/projects", projectRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
