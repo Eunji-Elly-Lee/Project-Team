@@ -26,7 +26,7 @@ function Forgot() {
     try {
       // Check if the email is registered or not
       const userCheck = await axios.get(
-        `${process.env.REACT_APP_API_URL}/users/user?email=${email}`
+        `${process.env.REACT_APP_API_URL}/users/get?email=${email}`
       )
       .then((response) => {
         return response.data;

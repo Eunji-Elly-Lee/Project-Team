@@ -33,7 +33,7 @@ function JoinUs() {
       try {
         // Check if the email is aready registered or not
         const userCheck = await axios.get(
-          `${process.env.REACT_APP_API_URL}/users/user?email=${newUser.email}`
+          `${process.env.REACT_APP_API_URL}/users/get?email=${newUser.email}`
         )
         .then((response) => {
           return response.data;
