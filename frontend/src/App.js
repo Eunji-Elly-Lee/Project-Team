@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "components/NavBar/NavBar";
 import Main from "components/Main/Main";
 import Projects from "components/Projects/Projects";
+import Working from "components/Working/Working";
 import SignIn from "components/SignIn/SignIn";
 import Forgot from "components/Forgot/Forgot";
 import Reset from "components/Reset/Reset";
@@ -24,6 +25,11 @@ function App() {
             basename={process.env.PUBLIC_URL}
             path="/projects"
             element={<Projects />}
+          />
+          <Route
+            basename={process.env.PUBLIC_URL}
+            path="/working"
+            element={<Working />}
           />
           <Route
             basename={process.env.PUBLIC_URL}
