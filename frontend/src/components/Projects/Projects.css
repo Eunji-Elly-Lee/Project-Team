@@ -1,0 +1,25 @@
+.projectsContainer {
+  margin: 2vw 10vw 13vw;
+  font-size: 20px;
+}
+.manyProjects {
+  margin-bottom: 5vw;
+}
+.projectsTitle {
+  margin-bottom: 1vw;
+  text-align: center;
+  font-size: 25px;
+}
+.prjAddBtnWrap {
+  text-align: right;
+}
+.prjAddBtn {
+  width: 95px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 530px) {
+  .projectsContainer {
+    margin: 2vw 3vw 13vw;
+  }
+}
