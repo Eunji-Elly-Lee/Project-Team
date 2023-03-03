@@ -1,0 +1,38 @@
+.projectModal {
+  font-size: 20px;
+}
+.prjModalHeader {
+  background-color: #F0F2F2;
+}
+.prjModalTitle {
+  font-size: 23px;
+  font-weight: 100;
+}
+.prjModalBody {
+  background-color: #F0F2F2;
+  border-radius: 0 0 10px 10px;
+}
+.prjFormBtn {
+  float: right;
+  width: 95px;
+  margin: 10px 0 0 10px;
+  font-size: 20px;
+}
+.prjMessage {
+  margin: 15px;
+  font-size: 23px;
+  text-align: center;
+}
+.prjCheck {
+  text-align: center;
+  color: gray;
+  font-size: 80px;
+  opacity: 0.3;
+  margin-top: -20px;
+}
+.prjCloseBtn{
+  float: right;
+  width: 95px;
+  margin: 10px;
+  font-size: 20px;
+}
