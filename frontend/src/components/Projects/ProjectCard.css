@@ -1,0 +1,45 @@
+.projectCard {
+  height: 600px;  
+  margin-top: 1vw;
+  background-color: #2B3135;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  color: #F0F2F2;
+}
+.projectCard a {
+  color: #FFFD24;
+}
+.prjEditBtnWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.prjEditBtn {
+  width: 95px;
+  margin: 10px 15px;
+  font-size: 20px;
+}
+.projectTitle {
+  margin-bottom: 15px;
+  font-size: 23px;
+  font-weight: 100;
+}
+.workingLink {
+  margin-top: 15px;
+}
+.workingLink a {
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 1400px) {
+  .projectCard {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .projectCard {
+    height: 570px;
+  }
+}
