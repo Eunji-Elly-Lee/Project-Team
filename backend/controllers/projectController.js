@@ -55,3 +55,44 @@ exports.getAllProjects = async (req, res) => {
     return console.log(error);
   }
 };
+
+// PUT update project by id
+exports.updateProject = async (req, res) => {
+  const { _id, title, contents, skills, github, link } = req.body.project;
+
+  try {
+    // Find and update the project's info
+    const project = await Project.findByIdAndUpdate(
+      _id,
+      {
+        title: title,
+        contents: contents,
+        skills: skills,
+        github: github,
+        link: link
+      },
+      {
+        // Option: return new data updated
+        new: true
+      }
+    );
+
+    return res.status(202).json(project);
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+// DELETE project by id
+exports.deleteProject = async (req, res) => {
+  const id = req.query.id;
+
+  try {
+    // Find and delete the project data
+    await Project.findByIdAndDelete(id);
+
+    return res.status(202).json("Deleted successfully");
+  } catch (error) {
+    return console.log(error);
+  }
+};
