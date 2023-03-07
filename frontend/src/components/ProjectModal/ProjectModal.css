@@ -36,3 +36,17 @@
   margin: 10px;
   font-size: 20px;
 }
+
+/* For Edit Project Modal */
+.prjDeleteBtn {
+  float: left;
+  margin-left: 0;
+}
+.prjDeleteBtns {
+  text-align: center;
+}
+.prjDeleteBtns button {
+  width: 95px;
+  margin: 20px 10px;
+  font-size: 20px;
+}
