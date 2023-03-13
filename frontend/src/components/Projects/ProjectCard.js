@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import EditProjectModal from "components/ProjectModal/EditProjectModal";
 import "components/Projects/ProjectCard.css";
 
 function ProjectCard({ project, login, admin }) {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <Col lg="6" xxl="4">
       <Card className="projectCard">
@@ -12,6 +16,7 @@ function ProjectCard({ project, login, admin }) {
             <Button
               className="prjEditBtn"
               variant="outline-info"
+              onClick={() => setModalShow(true)}
             >
               Edit
             </Button>
@@ -39,13 +44,19 @@ function ProjectCard({ project, login, admin }) {
             {/* When user logins, show the working link */}
             {login && (
               <div className="workingLink">
-                Go to
+                Go to 
                 <Link to="/working"> Working</Link>
               </div>
             )}
           </Card.Body>
         </div>
       </Card>
+      {/* When clicking Edit button, open the project modal */}
+      <EditProjectModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        project={project}
+      />
     </Col>
   );
 }
