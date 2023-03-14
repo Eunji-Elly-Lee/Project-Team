@@ -69,18 +69,25 @@ function Projects() {
             </Button>
           </div>
         )}
-        <Row>
-          {projects.map((project) => {
-            return(
-              <ProjectCard
-                key={project._id}
-                project={project}
-                login={login}
-                admin={admin}
-              />
-            );
-          })}
-        </Row>
+        {/* If no projects are registered */}
+        {projects.length < 1 ? (
+          <div className="noProjects">
+            No projects are registered!
+          </div>
+        ) : (
+          <Row>
+            {projects.map((project) => {
+              return(
+                <ProjectCard
+                  key={project._id}
+                  project={project}
+                  login={login}
+                  admin={admin}
+                />
+              );
+            })}
+          </Row>
+        )}        
       </Container>
       {/* When clicking Add button, open the project modal */}
       <AddProjectModal
