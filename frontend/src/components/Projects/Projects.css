@@ -17,6 +17,17 @@
   width: 95px;
   font-size: 20px;
 }
+.noProjects {
+  margin: 16vw 0 26vw;
+  font-size: 23px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .noProjects {
+    margin: 28vh 0 38vh;
+  }
+}
 
 @media screen and (max-width: 530px) {
   .projectsContainer {
