@@ -45,7 +45,13 @@ function ProjectCard({ project, login, admin }) {
             {login && (
               <div className="workingLink">
                 Go to 
-                <Link to="/working"> Working</Link>
+                <Link
+                  to="/working"
+                  state={{
+                    project: project
+                  }}>
+                  Working
+                </Link>
               </div>
             )}
           </Card.Body>
