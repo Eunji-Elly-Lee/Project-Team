@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { debounce } from "lodash";
 import { themeActions } from "../../redux/themeSlice";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
 import AddProjectModal from "components/ProjectModal/AddProjectModal";
 import "components/Projects/Projects.css";
@@ -12,6 +13,7 @@ function Projects() {
   const [login, setLogin] = useState(false);
   const [admin, setAdmin] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -32,6 +34,11 @@ function Projects() {
     }
   };
 
+  // Set the width value when the screen is resized
+  const onResize = debounce(() => {
+    setWindowWidth(window.innerWidth);
+  }, [1000]);
+
   useEffect(() => {
     dispatch(themeActions.lightTheme());
     getProjects();
@@ -48,6 +55,15 @@ function Projects() {
       setAdmin(false);
     }
   }, [dispatch, user]);
+
+  // Control resize event
+  useEffect(() => {    
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    }
+  }, [onResize]);
 
   return (
     <div
@@ -86,6 +102,24 @@ function Projects() {
                 />
               );
             })}
+            {/* Control blank when the number of projects is small */}
+            {((projects.length === 1 && windowWidth >= 992) ||
+              (projects.length === 2 && windowWidth >= 1400)) && (
+              <>
+              <Col lg="6" xxl="4">
+                <Card className="waitPrj">
+                  Wait Next Project
+                </Card>
+              </Col>
+              {(projects.length === 1 && windowWidth >= 1400) && (
+                <Col lg="6" xxl="4">
+                  <Card className="waitPrj">
+                    Wait Next Project
+                  </Card>
+                </Col>
+              )}
+              </>
+            )}
           </Row>
         )}        
       </Container>
