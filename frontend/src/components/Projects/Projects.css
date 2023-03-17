@@ -22,6 +22,19 @@
   font-size: 23px;
   text-align: center;
 }
+.waitPrj {
+  height: 600px;  
+  margin-top: 1vw;
+  padding: 25px;
+  background-color: #F0F2F2;
+  border: 1.5px solid #2B3135;
+}
+
+@media screen and (max-width: 1400px) {
+  .waitPrj {
+    height: 500px;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .noProjects {
@@ -32,5 +45,11 @@
 @media screen and (max-width: 530px) {
   .projectsContainer {
     margin: 2vw 3vw 13vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .waitPrj {
+    height: 570px;
   }
 }
