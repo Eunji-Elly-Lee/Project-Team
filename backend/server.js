@@ -9,6 +9,7 @@ dotenv.config();
 const userRoute = require("./routes/userRoute");
 const emailRoute = require("./routes/emailRoute");
 const projectRoute = require("./routes/projectRoute");
+const scheduleRoute = require("./routes/scheduleRoute");
 
 // Database connection
 const connection = require("./database/db");
@@ -21,6 +22,7 @@ app.use(cors());
 app.use("/api/users", userRoute);
 app.use("/api/emails", emailRoute);
 app.use("/api/projects", projectRoute);
+app.use("/api/schedules", scheduleRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
