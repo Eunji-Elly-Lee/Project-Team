@@ -5,7 +5,7 @@ exports.addSchedule = async (req, res) => {
   const {
     projectId, fromYear, fromMonth, fromDate,
     toYear, toMonth, toDate, issue, color
-  } = req.body;
+  } = req.body.schedule;
 
   try {
     // Create and save new schedule to DB
