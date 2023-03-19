@@ -1,0 +1,15 @@
+.workingContainer {
+  margin: 2vw 10vw 13vw;
+  font-size: 20px;
+}
+.workingTitle {
+  margin-bottom: 1vw;
+  text-align: center;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 530px) {
+  .workingContainer {
+    margin: 2vw 3vw 13vw;
+  }
+}
