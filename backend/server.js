@@ -10,6 +10,7 @@ const userRoute = require("./routes/userRoute");
 const emailRoute = require("./routes/emailRoute");
 const projectRoute = require("./routes/projectRoute");
 const scheduleRoute = require("./routes/scheduleRoute");
+const meetingRoute = require("./routes/meetingRoute");
 
 // Database connection
 const connection = require("./database/db");
@@ -23,6 +24,7 @@ app.use("/api/users", userRoute);
 app.use("/api/emails", emailRoute);
 app.use("/api/projects", projectRoute);
 app.use("/api/schedules", scheduleRoute);
+app.use("/api/meetings", meetingRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
