@@ -42,11 +42,13 @@ exports.getMeeting = async (req, res) => {
   }
 };
 
-// GET all meetings
+// GET all meetings by project id
 exports.getAllMeetings = async (req, res) => {
+  const projectId = req.query.projectId;
+
   try {
-    // Find all meetings
-    const meetings = await Meeting.find();
+    // Find all meetings of the specific project
+    const meetings = await Meeting.find({ projectId: projectId });
 
     if (meetings) {
       return res.status(200).json(meetings);
