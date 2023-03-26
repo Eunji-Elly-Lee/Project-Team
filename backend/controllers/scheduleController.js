@@ -47,11 +47,13 @@ exports.getSchedule = async (req, res) => {
   }
 };
 
-// GET all schedules
+// GET all schedules by project id
 exports.getAllSchedules = async (req, res) => {
+  const projectId = req.query.projectId;
+
   try {
-    // Find all schedules
-    const schedules = await Schedule.find();
+    // Find all schedules of the specific project
+    const schedules = await Schedule.find({ projectId: projectId });
 
     if (schedules) {
       return res.status(200).json(schedules);
