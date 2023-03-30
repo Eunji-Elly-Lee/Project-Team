@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { themeActions } from "../../redux/themeSlice";
 import { Col, Container, Row } from "react-bootstrap";
 import Calendar from "components/Calendar/Calendar";
@@ -12,18 +12,19 @@ function Working() {
   const [projectTitle, setProjectTitle] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Get parameter value from location state and set dark theme
-    if (location.state && location.state.project) {
+    // Get parameter value from location state and set dark theme if user logins
+    if (location.state && location.state.project && user !== null) {
       setProjectId(location.state.project._id);
       setProjectTitle(location.state.project.title);
       dispatch(themeActions.darkTheme());
     } else {
       navigate("/");
     }
-  }, [location.state, dispatch, navigate]);
+  }, [location.state, dispatch, user, navigate]);
 
   return (
     <div className="workingContainer">
@@ -31,10 +32,10 @@ function Working() {
       <Container>
         <Row>
           <Col lg="7">
-            <Calendar projectId={projectId} />
+            <Calendar projectId={projectId} user={user} />
           </Col>
           <Col lg="5">
-            <Chat projectId={projectId} />
+            <Chat projectId={projectId} user={user} />
           </Col>
         </Row>
       </Container>
