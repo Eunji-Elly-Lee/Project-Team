@@ -48,7 +48,14 @@ exports.getAllMeetings = async (req, res) => {
 
   try {
     // Find all meetings of the specific project
-    const meetings = await Meeting.find({ projectId: projectId });
+    const meetings = await Meeting.find({
+      projectId: projectId
+    })
+    .sort({
+      meetingYear: 1,
+      meetingMonth: 1,
+      meetingDate: 1
+    });
 
     if (meetings) {
       return res.status(200).json(meetings);
