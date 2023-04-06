@@ -1,3 +1,31 @@
-.projectModal {
+.schListModal {
+  font-size: 20px;
+}
+.schListHeader {
+  background-color: #F0F2F2;
+}
+.schListTitle {
+  font-size: 23px;
+  font-weight: 100;
+}
+.schListBody {
+  background-color: #F0F2F2;
+  border-radius: 0 0 10px 10px;
+}
+.schListWrap {
+  max-height: 450px;
+  margin: 10px 0;
+  overflow-y: scroll;
+}
+.schListWrap p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+.schListWrap p:hover {
+  color: #0DCAF0;
+}
+.schListBtn {
+  float: right;
+  width: 95px;
   font-size: 20px;
 }
