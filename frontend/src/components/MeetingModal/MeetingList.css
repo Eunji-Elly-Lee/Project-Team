@@ -1,3 +1,31 @@
-.projectModal {
+.mtgListModal {
+  font-size: 20px;
+}
+.mtgListHeader {
+  background-color: #F0F2F2;
+}
+.mtgListTitle {
+  font-size: 23px;
+  font-weight: 100;
+}
+.mtgListBody {
+  background-color: #F0F2F2;
+  border-radius: 0 0 10px 10px;
+}
+.mtgListWrap {
+  max-height: 450px;
+  margin: 10px 0;
+  overflow-y: scroll;
+}
+.mtgListWrap p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+.mtgListWrap p:hover {
+  color: #0DCAF0;
+}
+.mtgListBtn {
+  float: right;
+  width: 95px;
   font-size: 20px;
 }
